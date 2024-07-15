@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfiolio Website</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<style>
+    * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        scroll-behavior: smooth;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    :root {
+        --bg-color: #2a2a2a;
+        --second-bg-color: #20202020;
+        --text-color: #fff;
+        --second-color: #ccc;
+        --main-color: #05b4ff;
+        --big-font: 5rem;
+        --h2-font: 1.1rem;
+
+    }
+
+    body {
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    header {
+        position: relative;
+        width: 100%;
+        top: 0%;
+        right: 0%;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        padding: 22px 15px;
+        border-bottom: 1px solid transparent;
+        transition: all .45 ease;
+    }
+
+    .Logo {
+        color: var(--text-color);
+        font-size: 35px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    span {
+        color: var(--main-color);
+    }
+
+    .navlist {
+        display: inline-flex;
+        font-size: large;
+
+    }
+
+    .navlist a {
+        color: var(--second-color);
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0 23px;
+        transition: all .45s ease;
+    }
+
+    .navlist a:hover {
+        color: var(--main-color);
+    }
+
+    .navlist a:active {
+        color: var(--main-color);
+    }
+
+    #menu-icon {
+        font-size: 35px;
+        color: var(--text-color);
+        z-index: 1000;
+        cursor: pointer;
+        margin-left: 30px;
+        display: none;
+    }
+
+    section {
+        padding: 160px 15% 120px;
+    }
+
+    .home {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .slide {
+        margin-bottom: 20px;
+    }
+
+    .one {
+        display: inline-block;
+        margin-right: 15px;
+        padding: 0% 15px;
+        line-height: 32px;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 500;
+        border-radius: 5px;
+        background: var(--main-color);
+        color: var(--text-color);
+    }
+
+    .two {
+        display: inline-block;
+        color: var(--second-color);
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 500;
+    }
+
+    .home-text h1 {
+        font-size: 80px;
+        font-weight: 700;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--text-color);
+        line-height: 1.1;
+        margin: 0, 0, 8px;
+    }
+
+    .home-text h3 {
+        color: var(--text-color);
+        margin: 0, 0, 35px;
+        font-size: 3rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    .home-text p {
+        color: var(--text-color);
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+
+    .button {
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px;
+        background: var(--main-color);
+        border-radius: 5px;
+        color: var(--text-color);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: 500;
+        transition: all .45s ease;
+    }
+
+    .btn:hover {
+        transform: scale(0.9);
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .about-text h2 {
+        font-size: 50px;
+        line-height: 1;
+        padding: 2;
+    }
+
+    .about-text h4 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--text-color);
+        line-height: 1.7;
+        margin: 15px 0 30px;
+    }
+
+    .about-text p {
+        color: var(--second-color);
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        line-height: 1.8;
+        margin-bottom: 4rem;
+    }
+
+    .service {
+        background: var(--second-color);
+    }
+
+    .main-text {
+        text-align: center;
+    }
+
+    .main-text p {
+        color: var(--second-color);
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main-text h2 {
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    .service-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+        align-items: center;
+        gap: 2.5rem;
+        margin-top: 5rem;
+    }
+
+    .box {
+        background: #000000;
+        padding: 35px 45px;
+        border-radius: 8px;
+        transition: all 0.45s ease;
+
+    }
+
+    .s-icons i {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .box h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--second-color);
+        margin-bottom: 15px;
+    }
+
+    .box p {
+        color: var(--second-color);
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .box:hover {
+        transform: translateY(-8px);
+        cursor: pointer;
+    }
+
+    .Portfiolio-content {
+        display: grid;
+        /* justify-content: space-evenly; */
+        /* width: 100%; */
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 2.5rem;
+        margin-top: 5rem;
+    }
+
+    .row {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 500px;
+        height: 350px;
+    }
+
+    .row img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        display: block;
+        transition: transform 0.5s;
+    }
+
+    .layer {
+        width: 100%;
+        height: 0%;
+        background: linear-gradient(rgba(0, 0, 0, 0.1, )#00a6ff);
+        position: absolute;
+        border-radius: 8px;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 40px;
+        transition: height 0.5s;
+    }
+
+    .layer h5 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .layer p {
+        color: var(--text-color);
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .layer i {
+        color: var(--main-color);
+        margin-top: 20px;
+        font-size: 20px;
+        background: var(--text-color);
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+    }
+
+    .row:hover img {
+        transform: scale(1.1);
+    }
+
+    .row:hover .layer {
+        height: 80%;
+        background: rgba(0, 107, 165, 0.5);
+        backdrop-filter: blur(50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact {
+        background-color: transparent;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .contact-text h4 {
+        columns: var(--text-color);
+        margin: 18px 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .contact-text h2 {
+        font-size: var(--h2-font);
+        line-height: 1;
+    }
+
+    .contact-text p {
+        color: var(--second-color);
+        font-size: 24px;
+        line-height: 1.8;
+        margin-bottom: 30px
+    }
+
+    .list {
+        margin-bottom: 2.8rem;
+    }
+
+    .list li {
+        margin-bottom: 12px;
+    }
+
+    .list li a {
+        display: block;
+        color: var(--second-color);
+        font-size: 20px;
+        transition: all 0.45s e;
+    }
+
+    .list li a:hover {
+        color: var(--text-color);
+        /* transform: translateY(5px); */
+    }
+
+    .contact-icons i {
+        height: 45px;
+        width: 45px;
+        /* background-color: rgb(0,0,0); */
+        color: rgb(255, 255, 255);
+        font-size: 22px;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-right: 15px;
+        transition: all 0.45s ease;
+    }
+
+    .contact-icons i:hover {
+        /* background:var(--text-color); */
+        color: var(--main-color);
+    }
+
+    .contact-form {
+        position: relative;
+    }
+
+    .contact-form input {
+        margin: 10px 15px 10px 0;
+        font-size: 21px;
+    }
+
+    .contact-form form textarea {
+        width: 100%;
+        padding: 14px;
+        background: rgba(238, 231, 231, 0.66);
+        color: var(--text-color);
+        border: none;
+        font-size: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <!------Header----->
+    <header>
+        <a href="#" class="Logo">UI UX<span>Designer</span>..</a>
+        <ul class="navlist">
+            <li><a href="#Home" class="active">Home</a></li>
+            <li><a href="#About">About Me</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#Portfolio">Portfiolio</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+        <div class="bx bx menu" id="menu-icon"></div>
+    </header>
+
+    <!------Home Section----->
+    <section class="home" id="home">
+        <div class="home-text">
+            <div class="slide">
+                <span class="one">Hello</span>
+                <span class="two">I'm</span>
+            </div>
+            <h1>Chidambaram.V</h1>
+            <br>
+            <h3>UI/UX<span>Designer</span></h3>
+            <br><br><br>
+            <p>I'm a driven and imaginative UI/UX designer seeking an opportunity to use my skills and enthusiasm for
+                the field in a dynamic, team-oriented environment where I can make a difference and further my career.
+            </p>
+            <br><br>
+            <div class="button">
+                <a href="#" class="btn">About Me</a>
+            </div>
+        </div>
+    </section>
+    <!------about Section----->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="./Image .jpeg">
+        </div>
+        <div class="about-text">
+            <h2>About<span>Me</span></h2>
+            <h4>UI UX Designer</h4>
+            <p>Hello, I'm Chidambaram.V, a passionate and devoted UI/UX designer, earned a B.A. English with Mass
+                Communication and Journalism from Kodaikanal Christian College. My interest in how people engage with
+                technology and how intelligent design can greatly improve user experiences prompted me to pursue a
+                design career. I am excited to contribute my new viewpoint, inventiveness, and solid foundation in
+                design concepts to your prestigious business.</p>
+            <a href="#" class="btn">More About</a>
+        </div>
+    </section>
+
+    <!------service Section----->
+    <section class="Service" id="Service">
+        <div class="main-text">
+            <h2><span>My</span>Service</h2>
+        </div>
+        <div class="service-content">
+            <div class="box">
+
+                <h3>Web design</h3>
+                <p> One way to categorize the tasks is based on the professional's area of experience, such as
+                    competitive analysis or corporate strategy.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx code-alt'></i>
+                </div>
+                <h3>Creative design</h3>
+                <p>One way to categorize the tasks is based on the professional's area of experience, such as
+                    competitive analysis or corporate strategy.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx edit-alt'></i>
+                </div>
+                <h3>Creative design</h3>
+                <p>One way to categorize the tasks is based on the professional's area of experience, such as
+                    competitive analysis or corporate strategy.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!------portfoilo Section----->
+    <section class="Portfiolio" id="Portfiolio">
+        <div class="main-text">
+            <h2><span>latest</span>Projects</h2>
+        </div>
+        <div class="Portfiolio-content">
+            <div class="row">
+                <img src="./Mas Shuttle Court .png">
+                <div class="layer">
+                    <h5>Mas Shuttle Court UI Design</h5>
+                    <p>Designing a mobile app UI requires many essential concepts to guarantee that the user experience
+                        is straightforward, efficient, and visually appealing. View the design for the mobile
+                        application.</p>
+                    <i class='bx bx-link-external'></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="./Lidgre Grocery App.png">
+                <div class="layer">
+                    <h5>Lidgre Grocery App</h5>
+                    <p>Designing a mobile app UI requires many essential concepts to guarantee that the user experience
+                        is straightforward, efficient, and visually appealing.</p>
+                    <i class='bx bx-link-external'></i>
+                </div>
+            </div>
+        </div>
+        <div class="Portfiolio-content">
+            <div class="row">
+                <img src="./Tea Landing Page.png">
+                <div class="layer">
+                    <h5>Tea Landing Page</h5>
+                    <p>Designing a Website UI requires many essential concepts to guarantee that the user experience is
+                        straightforward, efficient, and visually appealing.</p>
+                    <i class='bx bx-link-external'></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="./CV Constructions.png">
+                <div class="layer">
+                    <h5>CV Construction Landing Page</h5>
+                    <p>Designing a Website UI requires many essential concepts to guarantee that the user experience is
+                        straightforward, efficient, and visually appealing.</p>
+                    <i class='bx bx-link-external'></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------Contact Section----->
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact<span>Me!!</span></h2>
+            <h4>If you have any Projects in mind.</h4>
+            <p>I am UI UX Desinger creating bold and brave user interface design for companies...</p>
+            <div class="list">
+                <li><a href="#">8072121841</a></li>
+                <li><a href="#">chidamabramv5577@gmail.com</a></li>
+            </div>
+
+            <div class="contact-icons">
+                <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i>
+                    <a href="#"><i class='bx bxl-instagram-alt'></i>
+                        <a href="#"><i class='bx bxl-youtube'></i>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="Name" placeholder="Your Name" required>
+                <input type="Email" placeholder="Your Email" required>
+                <input type="Number" placeholder="Enter Mobile Number" required>
+                <textarea name="" id="" cols="35" rows="10" placeholder="How can i help you !" required></textarea>
+                <button type="submit" value="Send Message" class="btn" required>Submit</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
